@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const PhotoList = () => {
   const [error, setError] = useState("");
+  const [data, setData] = useState([]);
   useEffect(() => {
     fetch(
       "https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json"
@@ -13,14 +14,18 @@ const PhotoList = () => {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
+        setData(data);
       })
       .catch((err) => {
         setError(err.message);
       });
   }, []);
 
-  return <div></div>;
+  const photoMap = data.map((el) => {
+    return <img src={el.url} alt={el.id} />;
+  });
+
+  return <div>{photoMap}</div>;
 };
 
 export default PhotoList;
