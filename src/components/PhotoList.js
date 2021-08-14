@@ -22,9 +22,14 @@ const PhotoList = () => {
       });
   }, []);
 
+  const chooseFav = (id) => {
+    const choosenImg = data.find((el) => el.id === id);
+    console.log(choosenImg);
+  };
+
   return (
     <main className="photos">
-      <Photo data={data} />
+      <Photo data={data} chooseFav={chooseFav} />
     </main>
   );
 };
