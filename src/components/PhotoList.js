@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Photo from "./Photo";
 
 const PhotoList = () => {
   const [error, setError] = useState("");
@@ -21,11 +22,11 @@ const PhotoList = () => {
       });
   }, []);
 
-  const photoMap = data.map((el) => {
-    return <img src={el.url} alt={el.id} />;
-  });
-
-  return <div>{photoMap}</div>;
+  return (
+    <div>
+      <Photo data={data} />
+    </div>
+  );
 };
 
 export default PhotoList;
