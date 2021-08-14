@@ -13,7 +13,7 @@ const Photo = ({ data, chooseFav }) => {
       <div className="image-container" key={el.id}>
         <img
           className="favorite"
-          src={Heart}
+          src={el.isFavorite ? RedHeart : Heart}
           alt="heart"
           onClick={() => handleClick(el.id)}
         />

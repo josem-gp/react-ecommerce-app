@@ -24,7 +24,9 @@ const PhotoList = () => {
 
   const chooseFav = (id) => {
     const choosenImg = data.find((el) => el.id === id);
-    console.log(choosenImg);
+    choosenImg.isFavorite = !choosenImg.isFavorite;
+    const newData = [...data];
+    setData(newData);
   };
 
   return (
