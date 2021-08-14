@@ -23,9 +23,9 @@ const PhotoList = () => {
   }, []);
 
   return (
-    <div>
+    <main className="photos">
       <Photo data={data} />
-    </div>
+    </main>
   );
 };
 
