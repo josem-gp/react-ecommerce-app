@@ -1,4 +1,5 @@
 import React from "react";
+import Delete from "../../images/delete.png";
 
 const Cart = ({ choosenImg }) => {
   const UNIT_PRICE = 5.99;
@@ -6,7 +7,8 @@ const Cart = ({ choosenImg }) => {
     console.log(el);
     return (
       <div className="cart-item">
-        <img className="image-grid" src={el.url} alt={el.id} />
+        <img className="image-grid image-container" src={el.url} alt={el.id} />
+        <img className="ri-delete-bin-line" src={Delete} alt="delete-icon" />
         <h3>{`$${UNIT_PRICE}`}</h3>
       </div>
     );
