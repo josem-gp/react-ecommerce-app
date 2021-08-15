@@ -9,6 +9,7 @@ function App() {
   const [data, setData] = useState([]);
   const [choosenImg, setChoosenImg] = useState([]);
   const [isBought, setIsBought] = useState(false);
+  const [beingBought, setBeingBought] = useState(false);
 
   const chooseFav = (id) => {
     const favImg = data.find((el) => el.id === id);
@@ -39,6 +40,9 @@ function App() {
             choosenImg={choosenImg}
             setChoosenImg={setChoosenImg}
             setIsBought={setIsBought}
+            setBeingBought={setBeingBought}
+            isBought={isBought}
+            beingBought={beingBought}
           />
         </Route>
       </Switch>

@@ -1,18 +1,32 @@
 import React from "react";
 import Delete from "../../images/delete.png";
 
-const Cart = ({ choosenImg, setChoosenImg, setIsBought }) => {
+const Cart = ({
+  choosenImg,
+  setChoosenImg,
+  setIsBought,
+  setBeingBought,
+  isBought,
+  beingBought,
+}) => {
   const UNIT_PRICE = 5.99;
 
   const handleDelete = (id) => {
     setChoosenImg([...choosenImg].filter((el) => el.id !== id));
   };
 
-  const 
+  const handleBuy = () => {
+    setBeingBought(true);
+    setTimeout(() => {
+      setBeingBought(false);
+      setChoosenImg([]);
+      setIsBought(true);
+    }, 3000);
+  };
 
   const cartImg = choosenImg.map((el) => {
     return (
-      <div className="cart-item">
+      <div className="cart-item" key={el.id}>
         <img className="image-grid image-container" src={el.url} alt={el.id} />
         <img
           className="ri-delete-bin-line"
@@ -25,14 +39,33 @@ const Cart = ({ choosenImg, setChoosenImg, setIsBought }) => {
     );
   });
 
+  const cartState = () => {
+    if (isBought) {
+      return (
+        <div>
+          <h1 className="total-cost">Total: ${UNIT_PRICE * cartImg.length}</h1>
+          <h3>You have no items in your cart.</h3>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          {cartImg}
+          <h1 className="total-cost">Total: ${UNIT_PRICE * cartImg.length}</h1>
+          <div>
+            <button className="order-button" onClick={handleBuy}>
+              {beingBought ? "Ordering..." : "Place Order"}
+            </button>
+          </div>
+        </div>
+      );
+    }
+  };
+
   return (
-    <main class="cart-page">
+    <main className="cart-page">
       <h1>Check out</h1>
-      {cartImg}
-      <h1 className="total-cost">Total: ${UNIT_PRICE * cartImg.length}</h1>
-      <div>
-        <button className="order-button" onClick={}>Place Order</button>
-      </div>
+      {cartState()}
     </main>
   );
 };
