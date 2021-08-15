@@ -1,12 +1,14 @@
 import React from "react";
 import Delete from "../../images/delete.png";
 
-const Cart = ({ choosenImg, setChoosenImg }) => {
+const Cart = ({ choosenImg, setChoosenImg, setIsBought }) => {
   const UNIT_PRICE = 5.99;
 
   const handleDelete = (id) => {
     setChoosenImg([...choosenImg].filter((el) => el.id !== id));
   };
+
+  const 
 
   const cartImg = choosenImg.map((el) => {
     return (
@@ -29,7 +31,7 @@ const Cart = ({ choosenImg, setChoosenImg }) => {
       {cartImg}
       <h1 className="total-cost">Total: ${UNIT_PRICE * cartImg.length}</h1>
       <div>
-        <button className="order-button">Place Order</button>
+        <button className="order-button" onClick={}>Place Order</button>
       </div>
     </main>
   );
