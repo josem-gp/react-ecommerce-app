@@ -4,6 +4,8 @@ import Photo from "./Photo";
 const PhotoList = () => {
   const [error, setError] = useState("");
   const [data, setData] = useState([]);
+  const [choosenImg, setChoosenImg] = useState([]);
+
   useEffect(() => {
     fetch(
       "https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json"
@@ -29,9 +31,14 @@ const PhotoList = () => {
     setData(newData);
   };
 
+  const chooseAdd = (id) => {
+    const choosenImg = data.find((el) => el.id === id);
+    setChoosenImg([...choosenImg, choosenImg]);
+  };
+
   return (
     <main className="photos">
-      <Photo data={data} chooseFav={chooseFav} />
+      <Photo data={data} chooseFav={chooseFav} chooseAdd={chooseAdd} />
     </main>
   );
 };
