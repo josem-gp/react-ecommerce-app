@@ -34,7 +34,7 @@ function App() {
           />
         </Route>
         <Route path="/cart">
-          <Cart choosenImg={choosenImg} />
+          <Cart choosenImg={choosenImg} setChoosenImg={setChoosenImg} />
         </Route>
       </Switch>
     </div>

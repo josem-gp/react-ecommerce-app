@@ -1,14 +1,23 @@
 import React from "react";
 import Delete from "../../images/delete.png";
 
-const Cart = ({ choosenImg }) => {
+const Cart = ({ choosenImg, setChoosenImg }) => {
   const UNIT_PRICE = 5.99;
+
+  const handleDelete = (id) => {
+    setChoosenImg([...choosenImg].filter((el) => el.id !== id));
+  };
+
   const cartImg = choosenImg.map((el) => {
-    console.log(el);
     return (
       <div className="cart-item">
         <img className="image-grid image-container" src={el.url} alt={el.id} />
-        <img className="ri-delete-bin-line" src={Delete} alt="delete-icon" />
+        <img
+          className="ri-delete-bin-line"
+          src={Delete}
+          alt="delete-icon"
+          onClick={() => handleDelete(el.id)}
+        />
         <h3>{`$${UNIT_PRICE}`}</h3>
       </div>
     );
