@@ -1,15 +1,16 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 
-import Header from "./Header";
-import PhotoList from "./PhotoList";
+import Home from "./home/Home";
 
 function App() {
   return (
     <div>
-      <Switch></Switch>
-      <Header />
-      <PhotoList />
+      <Switch>
+        <Route>
+          <Home />
+        </Route>
+      </Switch>
     </div>
   );
 }
