@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Photo from "./Photo";
 
-const PhotoList = () => {
+const PhotoList = ({ data, setData, chooseAdd, chooseFav }) => {
   const [error, setError] = useState("");
-  const [data, setData] = useState([]);
-  const [choosenImg, setChoosenImg] = useState([]);
 
   useEffect(() => {
     fetch(
@@ -23,18 +21,6 @@ const PhotoList = () => {
         setError(err.message);
       });
   }, []);
-
-  const chooseFav = (id) => {
-    const choosenImg = data.find((el) => el.id === id);
-    choosenImg.isFavorite = !choosenImg.isFavorite;
-    const newData = [...data];
-    setData(newData);
-  };
-
-  const chooseAdd = (id) => {
-    const choosenImg = data.find((el) => el.id === id);
-    setChoosenImg([...choosenImg, choosenImg]);
-  };
 
   return (
     <main className="photos">
