@@ -1,7 +1,7 @@
 import React from "react";
-import Heart from "../images/heart.png";
-import RedHeart from "../images/red_heart.png";
-import Add from "../images/add.png";
+import Heart from "../../images/heart.png";
+import RedHeart from "../../images/red_heart.png";
+import Add from "../../images/add.png";
 
 const Photo = ({ data, chooseFav }) => {
   const handleClick = (id) => {

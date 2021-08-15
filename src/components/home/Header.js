@@ -1,5 +1,5 @@
 import React from "react";
-import Cart from "../images/cart.png";
+import Cart from "../../images/cart.png";
 
 const Header = () => {
   return (
