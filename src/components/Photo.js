@@ -26,6 +26,3 @@ const Photo = ({ data, chooseFav }) => {
 };
 
 export default Photo;
-
-//next steps: when i click heart it changes for red_heart and the favourite false in the props changes to true
-// after that focus on router to create the cart page and a favourites page
