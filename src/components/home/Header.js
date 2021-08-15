@@ -1,12 +1,14 @@
 import React from "react";
 import Cart from "../../images/cart.png";
-import { Link } from "react-router-dom";
+import { Link, useRouteMatch } from "react-router-dom";
 
 const Header = () => {
+  const { path, url } = useRouteMatch();
+
   return (
     <header>
       <h1>Pic Some</h1>
-      <Link to="/cart">
+      <Link to={`${url}cart`}>
         <img className="cart" src={Cart} alt="cart" />
       </Link>
     </header>
