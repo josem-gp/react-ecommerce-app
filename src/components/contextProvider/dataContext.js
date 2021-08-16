@@ -5,6 +5,8 @@ const DataContext = createContext();
 const DataContextProvider = (props) => {
   const [data, setData] = useState([]);
   const [choosenImg, setChoosenImg] = useState([]);
+  const [isBought, setIsBought] = useState(false);
+  const [beingBought, setBeingBought] = useState(false);
 
   const chooseFav = (id) => {
     const favImg = data.find((el) => el.id === id);
@@ -20,7 +22,18 @@ const DataContextProvider = (props) => {
 
   return (
     <DataContext.Provider
-      value={{ data, setData, chooseFav, chooseAdd, choosenImg, setChoosenImg }}
+      value={{
+        data,
+        setData,
+        chooseFav,
+        chooseAdd,
+        choosenImg,
+        setChoosenImg,
+        isBought,
+        setIsBought,
+        beingBought,
+        setBeingBought,
+      }}
     >
       {props.children}
     </DataContext.Provider>
