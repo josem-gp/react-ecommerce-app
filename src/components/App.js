@@ -6,22 +6,8 @@ import Header from "./Header";
 import Home from "./home/Home";
 
 function App() {
-  const [data, setData] = useState([]);
-  const [choosenImg, setChoosenImg] = useState([]);
   const [isBought, setIsBought] = useState(false);
   const [beingBought, setBeingBought] = useState(false);
-
-  const chooseFav = (id) => {
-    const favImg = data.find((el) => el.id === id);
-    favImg.isFavorite = !favImg.isFavorite;
-    const newData = [...data];
-    setData(newData);
-  };
-
-  const chooseAdd = (id) => {
-    const cartImg = data.find((el) => el.id === id);
-    setChoosenImg([...choosenImg, cartImg]);
-  };
 
   return (
     <div>
