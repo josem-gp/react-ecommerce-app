@@ -4,25 +4,22 @@ import { DataContext } from "../contextProvider/dataContext";
 
 const Cart = () => {
   const UNIT_PRICE = 5.99;
-  const {
-    choosenImg,
-    setChoosenImg,
-    setIsBought,
-    setBeingBought,
-    isBought,
-    beingBought,
-  } = useContext(DataContext);
+  const { choosenImg, isBought, beingBought, dispatch } =
+    useContext(DataContext);
 
   const handleDelete = (id) => {
-    setChoosenImg([...choosenImg].filter((el) => el.id !== id));
+    // setChoosenImg([...choosenImg].filter((el) => el.id !== id));
+    dispatch({ type: "SET_IMG_ID", value: id });
   };
 
   const handleBuy = () => {
-    setBeingBought(true);
+    // setBeingBought(true);
+    dispatch({ type: "SET_BOUGHT" });
     setTimeout(() => {
-      setBeingBought(false);
-      setChoosenImg([]);
-      setIsBought(true);
+      // setBeingBought(false);
+      // setChoosenImg([]);
+      // setIsBought(true);
+      dispatch({ type: "SET_AFTER_BUY" });
     }, 3000);
   };
 

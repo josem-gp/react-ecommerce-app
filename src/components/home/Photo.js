@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import Heart from "../../images/heart.png";
 import RedHeart from "../../images/red_heart.png";
 import Add from "../../images/add.png";
+import { DataContext } from "../contextProvider/dataContext";
 
-const Photo = ({ data, chooseFav, chooseAdd }) => {
+const Photo = () => {
+  const { data, chooseFav, chooseAdd } = useContext(DataContext);
+
   const handleFav = (id) => {
     chooseFav(id);
   };

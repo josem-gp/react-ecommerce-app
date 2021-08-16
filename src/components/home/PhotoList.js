@@ -4,7 +4,7 @@ import { DataContext } from "../contextProvider/dataContext";
 
 const PhotoList = () => {
   const [error, setError] = useState("");
-  const { data, setData, chooseAdd, chooseFav } = useContext(DataContext);
+  const { dispatch } = useContext(DataContext);
   useEffect(() => {
     fetch(
       "https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json"
@@ -16,7 +16,8 @@ const PhotoList = () => {
         return response.json();
       })
       .then((data) => {
-        setData(data);
+        // setData(data);
+        dispatch({ type: "SET_DATA", value: data });
       })
       .catch((err) => {
         setError(err.message);
@@ -25,7 +26,7 @@ const PhotoList = () => {
 
   return (
     <main className="photos">
-      <Photo data={data} chooseFav={chooseFav} chooseAdd={chooseAdd} />
+      <Photo />
     </main>
   );
 };
