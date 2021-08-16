@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import Photo from "./Photo";
-import DataContext from "../contextProvider/dataContext";
+import { DataContext } from "../contextProvider/dataContext";
 
 const PhotoList = () => {
   const [error, setError] = useState("");
