@@ -14,17 +14,10 @@ function App() {
       <Header />
       <Switch>
         <Route exact path="/">
-          <Home
-            data={data}
-            setData={setData}
-            chooseAdd={chooseAdd}
-            chooseFav={chooseFav}
-          />
+          <Home />
         </Route>
         <Route path="/cart">
           <Cart
-            choosenImg={choosenImg}
-            setChoosenImg={setChoosenImg}
             setIsBought={setIsBought}
             setBeingBought={setBeingBought}
             isBought={isBought}

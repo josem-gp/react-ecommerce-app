@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Photo from "./Photo";
+import DataContext from "../contextProvider/dataContext";
 
-const PhotoList = ({ data, setData, chooseAdd, chooseFav }) => {
+const PhotoList = () => {
   const [error, setError] = useState("");
-
+  const { data, setData, chooseAdd, chooseFav } = useContext(DataContext);
   useEffect(() => {
     fetch(
       "https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json"

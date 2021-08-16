@@ -1,15 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import Delete from "../../images/delete.png";
+import { DataContext } from "../contextProvider/dataContext";
 
-const Cart = ({
-  choosenImg,
-  setChoosenImg,
-  setIsBought,
-  setBeingBought,
-  isBought,
-  beingBought,
-}) => {
+const Cart = ({ setIsBought, setBeingBought, isBought, beingBought }) => {
   const UNIT_PRICE = 5.99;
+  const { choosenImg, setChoosenImg } = useContext(DataContext);
 
   const handleDelete = (id) => {
     setChoosenImg([...choosenImg].filter((el) => el.id !== id));

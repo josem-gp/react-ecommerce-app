@@ -1,15 +1,10 @@
 import React from "react";
 import PhotoList from "./PhotoList";
 
-const Home = ({ data, setData, chooseAdd, chooseFav }) => {
+const Home = () => {
   return (
     <div>
-      <PhotoList
-        data={data}
-        setData={setData}
-        chooseAdd={chooseAdd}
-        chooseFav={chooseFav}
-      />
+      <PhotoList />
     </div>
   );
 };

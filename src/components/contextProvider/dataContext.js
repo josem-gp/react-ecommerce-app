@@ -2,7 +2,7 @@ import React, { useState, createContext } from "react";
 
 const DataContext = createContext();
 
-const DataContext = () => {
+const DataContextProvider = (props) => {
   const [data, setData] = useState([]);
   const [choosenImg, setChoosenImg] = useState([]);
 
@@ -19,10 +19,12 @@ const DataContext = () => {
   };
 
   return (
-    <DataContext.Provider value={{ data, setData, chooseFav, chooseAdd }}>
-      {children}
+    <DataContext.Provider
+      value={{ data, setData, chooseFav, chooseAdd, choosenImg, setChoosenImg }}
+    >
+      {props.children}
     </DataContext.Provider>
   );
 };
 
-export default dataContext;
+export { DataContextProvider, DataContext };
