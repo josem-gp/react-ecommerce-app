@@ -7,11 +7,11 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { DataContextProvider } from "./components/contextProvider/DataContextProvider";
 
 ReactDOM.render(
-  <Router>
-    <DataContextProvider>
+  <DataContextProvider>
+    <Router>
       <App />
-    </DataContextProvider>
-  </Router>,
+    </Router>
+  </DataContextProvider>,
   document.getElementById("root")
 );
 
