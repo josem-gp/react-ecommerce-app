@@ -4,7 +4,7 @@ import { DataContext } from "../contextProvider/DataContextProvider";
 
 const PhotoList = () => {
   const [error, setError] = useState("");
-  const { dispatch } = useContext(DataContext);
+  const { data, dispatch } = useContext(DataContext);
   useEffect(() => {
     fetch(
       "https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json"
@@ -24,11 +24,11 @@ const PhotoList = () => {
       });
   }, []);
 
-  return (
-    <main className="photos">
-      <Photo />
-    </main>
-  );
+  const photoMap = data.map((el) => {
+    return <Photo key={el.id} image={el} />;
+  });
+
+  return <main className="photos">{photoMap}</main>;
 };
 
 export default PhotoList;
