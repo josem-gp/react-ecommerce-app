@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import Delete from "../../images/delete.png";
-import { DataContext } from "../contextProvider/dataContext";
+import { DataContext } from "../contextProvider/DataContextProvider";
 
 const Cart = () => {
   const UNIT_PRICE = 5.99;
