@@ -16,18 +16,14 @@ const Photo = ({ image }) => {
   };
 
   return (
-    <div className="image-container" key={image.id}>
+    <div className="image-container big" key={image.id}>
       <img
         className="favorite"
         src={image.isFavorite ? RedHeart : Heart}
         alt="heart"
         onClick={() => handleFav(image.id)}
       />
-      <img
-        className="image-grid wide tall big"
-        src={image.url}
-        alt={image.id}
-      />
+      <img className="image-grid" src={image.url} alt={image.id} />
       <img
         className="cart"
         src={Add}
