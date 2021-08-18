@@ -18,6 +18,19 @@ const DataContextProvider = (props) => {
     dispatch({ type: "SET_DATA", value: newData });
   };
 
+  //Another BETTER way of doing it would be:
+  // function chooseFav(id) {
+  //   const updatedArr = data.map((photo) => {
+  //     if (photo.id === id) {
+  //       return { ...photo, isFavorite: !photo.isFavorite };
+  //     }
+  //     return photo;
+  //   });
+
+  //   setData(updatedArr);
+  // dispatch({ type: "SET_DATA", value: updatedArr });
+  // }
+
   const chooseAdd = (id) => {
     const cartImg = data.find((el) => el.id === id);
     // setChoosenImg([...choosenImg, cartImg]);
