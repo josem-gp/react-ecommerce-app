@@ -36,7 +36,7 @@ const Photo = ({ image }) => {
 };
 
 Photo.propTypes = {
-  image: PropTypes.object.shape({
+  image: PropTypes.shape({
     id: PropTypes.string,
     url: PropTypes.string,
     isFavorite: PropTypes.string,
