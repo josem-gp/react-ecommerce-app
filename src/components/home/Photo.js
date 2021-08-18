@@ -3,6 +3,7 @@ import Heart from "../../images/heart.png";
 import RedHeart from "../../images/red_heart.png";
 import Add from "../../images/add.png";
 import { DataContext } from "../contextProvider/DataContextProvider";
+import PropTypes from "prop-types";
 
 const Photo = ({ image }) => {
   const { chooseFav, chooseAdd } = useContext(DataContext);
@@ -32,6 +33,14 @@ const Photo = ({ image }) => {
       />
     </div>
   );
+};
+
+Photo.propTypes = {
+  image: PropTypes.object.shape({
+    id: PropTypes.string,
+    url: PropTypes.string,
+    isFavorite: PropTypes.string,
+  }),
 };
 
 export default Photo;
