@@ -33,7 +33,7 @@ const DataContextProvider = (props) => {
 
   const chooseAdd = (id) => {
     const cartImg = data.find((el) => el.id === id);
-    // setChoosenImg([...choosenImg, cartImg]);
+    // setChoosenImg(prevImg => [...prevImg, cartImg]);
     dispatch({ type: "CHOOSEN_IMG", value: cartImg });
   };
 
